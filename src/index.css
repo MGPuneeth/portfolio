@@ -1,0 +1,345 @@
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap");
+
+/* ── Base & CSS Variables ─────────────────────────────────── */
+:root {
+  --gold: #ffd700;
+  --gold-light: #ffe566;
+  --gold-dark: #c9a800;
+  --bg-primary: #0a0a0a;
+  --bg-card: #111111;
+  --bg-card-2: #1a1a1a;
+  --text-primary: #e8e8e8;
+  --text-secondary: #a0a0a0;
+  --border-color: #2a2a2a;
+}
+
+[data-theme="light"] {
+  --bg-primary: #f5f5f0;
+  --bg-card: #ffffff;
+  --bg-card-2: #f0f0eb;
+  --text-primary: #111111;
+  --text-secondary: #555555;
+  --border-color: #e0e0e0;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: "Inter", sans-serif;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: "JetBrains Mono", monospace;
+}
+
+/* ── Gold Gradient & Effects ───────────────────────────────── */
+.gold-gradient {
+  background: linear-gradient(135deg, #ffd700, #ffa500, #ffd700);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200% auto;
+  animation: goldShine 3s linear infinite;
+}
+
+@keyframes goldShine {
+  0% {
+    background-position: 0% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+}
+
+.gold-glow {
+  box-shadow:
+    0 0 20px rgba(255, 215, 0, 0.3),
+    0 0 40px rgba(255, 215, 0, 0.1);
+}
+
+.gold-glow-text {
+  text-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+}
+
+.gold-border {
+  border: 1px solid rgba(255, 215, 0, 0.5);
+}
+
+.gold-btn {
+  background: linear-gradient(135deg, #ffd700, #ffa500);
+  color: #000;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.gold-btn::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, #ffe566, #ffd700);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.gold-btn:hover {
+  box-shadow: 0 0 25px rgba(255, 215, 0, 0.5);
+  transform: translateY(-2px);
+  color: #000000;
+}
+
+/* ── Card Styles ──────────────────────────────────────────── */
+.card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  border-color: rgba(255, 215, 0, 0.4);
+  box-shadow: 0 0 25px rgba(255, 215, 0, 0.15);
+  transform: translateY(-4px) scale(1.02);
+}
+
+/* ── Section Styles ───────────────────────────────────────── */
+.section-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 80px 24px;
+}
+
+.section-tag {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  color: var(--gold);
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.section-title {
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 16px;
+}
+
+/* ── Scrollbar ────────────────────────────────────────────── */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 215, 0, 0.4);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #ffd700;
+}
+
+/* ── Infinite Marquee ─────────────────────────────────────── */
+@keyframes marquee-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes marquee-right {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.marquee-left {
+  animation: marquee-left 30s linear infinite;
+}
+.marquee-right {
+  animation: marquee-right 30s linear infinite;
+}
+
+.marquee-wrapper:hover .marquee-left,
+.marquee-wrapper:hover .marquee-right {
+  animation-play-state: paused;
+}
+
+/* ── Typed Cursor ─────────────────────────────────────────── */
+.typed-cursor {
+  color: #ffd700;
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+/* ── Timeline ─────────────────────────────────────────────── */
+.timeline-line {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(to bottom, #ffd700, transparent);
+}
+
+/* ── Navbar active link ───────────────────────────────────── */
+.nav-active {
+  color: #ffd700 !important;
+  position: relative;
+}
+
+.nav-active::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: #ffd700;
+  border-radius: 1px;
+  box-shadow: 0 0 8px rgba(255, 215, 0, 0.6);
+}
+
+/* ── Social card hover ────────────────────────────────────── */
+.social-card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 16px 24px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  text-decoration: none;
+  color: var(--text-primary);
+}
+
+.social-card:hover {
+  border-color: rgba(255, 215, 0, 0.5);
+  box-shadow: 0 0 20px rgba(255, 215, 0, 0.2);
+  transform: translateX(6px);
+}
+
+/* ── Form inputs ──────────────────────────────────────────── */
+.form-input {
+  width: 100%;
+  background-color: var(--bg-card-2);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 12px 16px;
+  color: var(--text-primary);
+  font-family: "Inter", sans-serif;
+  font-size: 0.95rem;
+  outline: none;
+  transition:
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.form-input:focus {
+  border-color: rgba(255, 215, 0, 0.6);
+  box-shadow: 0 0 12px rgba(255, 215, 0, 0.15);
+}
+
+.form-input::placeholder {
+  color: var(--text-secondary);
+}
+
+/* ── Filter pills ─────────────────────────────────────────── */
+.filter-pill {
+  padding: 6px 16px;
+  border-radius: 999px;
+  background: var(--bg-card-2);
+  border: 1px solid var(--border-color);
+  font-size: 0.8rem;
+  font-family: "JetBrains Mono", monospace;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  color: var(--text-secondary);
+}
+
+.filter-pill:hover,
+.filter-pill.active {
+  background: rgba(255, 215, 0, 0.12);
+  border-color: rgba(255, 215, 0, 0.5);
+  color: #ffd700;
+}
+
+/* ── Back to top ──────────────────────────────────────────── */
+.back-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #ffd700, #ffa500);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 0 20px rgba(255, 215, 0, 0.4);
+  transition: all 0.3s ease;
+  z-index: 100;
+  color: #000;
+  border: none;
+}
+
+.back-to-top:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 0 30px rgba(255, 215, 0, 0.6);
+}
+
+/* ── Spin keyframe (used by About avatar ring) ────────────── */
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ── Navbar responsive visibility ─────────────────────────── */
+@media (min-width: 769px) {
+  .mobile-controls {
+    display: none !important;
+  }
+}
+@media (max-width: 768px) {
+  .desktop-nav {
+    display: none !important;
+  }
+}
