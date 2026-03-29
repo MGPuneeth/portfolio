@@ -4,7 +4,7 @@ import { achievements } from "../data/portfolioData";
 export default function Achievements() {
   return (
     <section
-      id="achievements"
+      id="extra-curriculars"
       style={{
         backgroundColor: "var(--bg-card)",
         borderTop: "1px solid var(--border-color)",
