@@ -278,9 +278,8 @@ export const certifications = [
   },
 ];
 
-// EmailJS configuration — fill these in before deployment
 export const emailjsConfig = {
-  serviceId: "service_ahnyqz5",
-  templateId: "template_n5sudsr",
-  publicKey: "vIWiqgm_PknB-SCsm",
+  serviceId: import.meta.env.VITE_EMAILJS_SERVICE_ID,
+  templateId: import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+  publicKey: import.meta.env.VITE_EMAILJS_PUBLIC_KEY,
 };
