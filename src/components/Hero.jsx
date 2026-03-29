@@ -1,20 +1,9 @@
-import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import Particles, { initParticlesEngine } from "@tsparticles/react";
-import { loadSlim } from "@tsparticles/slim";
-import { FiDownload, FiArrowDown } from "react-icons/fi";
+import { FiDownload } from "react-icons/fi";
 import { personal, typewriterRoles } from "../data/portfolioData";
 import { useTypewriter } from "../hooks/useCustomHooks";
 
 export default function Hero() {
-  const [particlesReady, setParticlesReady] = useState(false);
-
-  useEffect(() => {
-    initParticlesEngine(async (engine) => {
-      await loadSlim(engine);
-    }).then(() => setParticlesReady(true));
-  }, []);
-
   const typed = useTypewriter(typewriterRoles, 75, 1800);
 
   const scrollToProjects = () =>
@@ -32,59 +21,13 @@ export default function Hero() {
         overflow: "hidden",
       }}
     >
-      {/* Particles Background */}
-      {particlesReady && (
-        <Particles
-          id="hero-particles"
-          style={{ position: "absolute", inset: 0, zIndex: 0 }}
-          options={{
-            background: { color: { value: "transparent" } },
-
-            fpsLimit: 30,
-
-            interactivity: {
-              events: {
-                onHover: { enable: false },
-                onClick: { enable: false },
-              },
-            },
-
-            particles: {
-              color: { value: ["#FFD700", "#FFA500", "#ffe566"] },
-
-              links: { enable: false },
-
-              move: {
-                direction: "none",
-                enable: true,
-                outModes: { default: "out" },
-                random: true,
-                speed: 0.8,
-              },
-              number: {
-                density: { enable: true, area: 900 },
-                value: 35,
-              },
-
-              opacity: {
-                value: { min: 0.1, max: 0.4 }, // ✅ Subtle fade variation
-              },
-              shape: { type: "circle" },
-              size: { value: { min: 1, max: 2.5 } },
-            },
-            detectRetina: false,
-          }}
-        />
-      )}
-
-      {/* Radial gradient overlay */}
+      {/* Static subtle gold glow — no particles, no animation */}
       <div
         style={{
           position: "absolute",
           inset: 0,
           background:
-            "radial-gradient(ellipse at 50% 50%, rgba(255,215,0,0.05) 0%, transparent 70%)",
-          zIndex: 1,
+            "radial-gradient(ellipse at 50% 40%, rgba(255,215,0,0.04) 0%, transparent 65%)",
           pointerEvents: "none",
         }}
       />
@@ -93,16 +36,16 @@ export default function Hero() {
       <div
         style={{
           position: "relative",
-          zIndex: 2,
+          zIndex: 1,
           textAlign: "center",
           padding: "0 24px",
           maxWidth: "800px",
         }}
       >
         <motion.p
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.2 }}
+          transition={{ duration: 0.4, delay: 0.1, ease: "easeOut" }}
           style={{
             fontFamily: "'JetBrains Mono', monospace",
             fontSize: "0.85rem",
@@ -116,9 +59,9 @@ export default function Hero() {
         </motion.p>
 
         <motion.h1
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.35 }}
+          transition={{ duration: 0.4, delay: 0.2, ease: "easeOut" }}
           style={{
             fontSize: "clamp(2.5rem, 8vw, 5rem)",
             fontWeight: 700,
@@ -131,9 +74,9 @@ export default function Hero() {
         </motion.h1>
 
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.5 }}
+          transition={{ duration: 0.4, delay: 0.3, ease: "easeOut" }}
           style={{
             fontSize: "clamp(1.1rem, 3vw, 1.5rem)",
             fontFamily: "'JetBrains Mono', monospace",
@@ -148,9 +91,9 @@ export default function Hero() {
         </motion.div>
 
         <motion.p
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.65 }}
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.4, delay: 0.4, ease: "easeOut" }}
           style={{
             fontSize: "1rem",
             color: "var(--text-secondary)",
@@ -163,9 +106,9 @@ export default function Hero() {
         </motion.p>
 
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.8 }}
+          transition={{ duration: 0.4, delay: 0.5, ease: "easeOut" }}
           style={{
             display: "flex",
             gap: "16px",
@@ -207,11 +150,11 @@ export default function Hero() {
               alignItems: "center",
               gap: "8px",
               textDecoration: "none",
-              transition: "all 0.3s ease",
+              transition: "background 0.2s ease, box-shadow 0.2s ease",
             }}
             onMouseEnter={(e) => {
               e.currentTarget.style.background = "rgba(255,215,0,0.08)";
-              e.currentTarget.style.boxShadow = "0 0 20px rgba(255,215,0,0.2)";
+              e.currentTarget.style.boxShadow = "0 0 20px rgba(255,215,0,0.15)";
             }}
             onMouseLeave={(e) => {
               e.currentTarget.style.background = "transparent";
@@ -222,24 +165,6 @@ export default function Hero() {
           </a>
         </motion.div>
       </div>
-
-      {/* Scroll Chevron */}
-      <motion.div
-        animate={{ y: [0, 12, 0] }}
-        transition={{ repeat: Infinity, duration: 1.8 }}
-        style={{
-          position: "absolute",
-          bottom: "36px",
-          left: "50%",
-          transform: "translateX(-50%)",
-          zIndex: 2,
-          color: "rgba(255,215,0,0.6)",
-          cursor: "pointer",
-        }}
-        onClick={scrollToProjects}
-      >
-        <FiArrowDown size={28} />
-      </motion.div>
     </section>
   );
 }
