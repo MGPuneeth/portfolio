@@ -185,7 +185,7 @@ export const education = [
   },
 ];
 
-export const achievements = [
+export const extraCurriculars = [
   {
     icon: "💡",
     title: "Smart India Hackathon (SIH) 2025",

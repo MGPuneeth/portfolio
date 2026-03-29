@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
-import { achievements } from "../data/portfolioData";
+import { extraCurriculars } from "../data/portfolioData";
 
-export default function Achievements() {
+export default function ExtraCurriculars() {
   return (
     <section
       id="extra-curriculars"
@@ -32,7 +32,7 @@ export default function Achievements() {
             gap: "24px",
           }}
         >
-          {achievements.map((ach, i) => (
+          {extraCurriculars.map((ach, i) => (
             <motion.div
               key={i}
               initial={{ opacity: 0, y: 30 }}
