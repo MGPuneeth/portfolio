@@ -228,6 +228,19 @@ export const extraCurriculars = [
 export const certifications = [
   {
     id: 1,
+    title: "AWS Cloud Technical Essentials",
+    issuer: "AWS Cloud",
+    platform: "Coursera",
+    date: "April 02, 2026",
+    credentialLink:
+      "https://www.coursera.org/account/accomplishments/verify/LBCJ3JHD3XYP",
+    icon: "aws-cloud",
+    badgeColor: "#4285F4",
+    note: null,
+    credentialNo: null,
+  },
+  {
+    id: 2,
     title: "Google Cloud Fundamentals: Core Infrastructure",
     issuer: "Google Cloud",
     platform: "Coursera",
@@ -239,7 +252,7 @@ export const certifications = [
     credentialNo: null,
   },
   {
-    id: 2,
+    id: 3,
     title: "Developing Applications with Google Cloud: Foundations",
     issuer: "Google Cloud",
     platform: "Coursera",
@@ -251,7 +264,7 @@ export const certifications = [
     credentialNo: null,
   },
   {
-    id: 3,
+    id: 4,
     title: "FLY-Scholar — Finding the Leader in You",
     issuer: "Competitiveness Mindset Institute, USA",
     platform: "CMI — Foundation for Excellence",
@@ -264,7 +277,7 @@ export const certifications = [
     note: "Skills: Conscientiousness, Innovativeness, Taking Initiative, Perseverance & Problem Solving",
   },
   {
-    id: 4,
+    id: 5,
     title: "Web Development Internship",
     issuer: "Elevate Labs",
     platform: "Skill India / Ministry of MSME, Govt. of India",
