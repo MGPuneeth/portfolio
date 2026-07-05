@@ -127,8 +127,7 @@ export default function About() {
                 marginBottom: "24px",
               }}
             >
-              {personal.bio ||
-                `Hi, I'm ${personal.name}, a passionate Computer Science student at ${personal.university}, graduating in 2027. I love building scalable, user-friendly applications and solving complex problems through clean, efficient code. I'm actively seeking full-time Software Engineering roles where I can contribute, grow, and make an impact. When I'm not coding, you'll find me exploring new technologies, grinding DSA or understanding current affairs.`}
+              {personal.bio}
             </p>
 
             <div style={{ display: "flex", gap: "24px", flexWrap: "wrap" }}>

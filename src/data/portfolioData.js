@@ -6,6 +6,7 @@ export const personal = {
   email: "mgpuneeth34@gmail.com",
   resumeUrl: "/Resume.pdf",
   avatar: "/profile.jpeg",
+  bio: "Hi, I'm Puneeth M G, a passionate Computer Science student at NMIT Bangalore, graduating in 2027. I love building scalable, user-friendly applications and solving complex problems through clean, efficient code. I'm actively seeking full-time Software Engineering roles where I can contribute, grow, and make an impact. When I'm not coding, you'll find me exploring new technologies, grinding DSA or understanding current affairs.",
 };
 
 export const social = {
@@ -215,7 +216,7 @@ export const extraCurriculars = [
     icon: "🏏",
     title: "Organizer — Hostel Cricket League 2025",
     description:
-      "Planned and successfully coordinated a hostel-level cricket tournament, managing logistics, scheduling, and team participation to ensure smooth execution.",
+      "Planned and successfully coordinated a hostel-level cricket tournament consisting of 12 teams, managing logistics, scheduling, and team participation to ensure smooth execution.",
   },
   {
     icon: "🎉",
@@ -223,36 +224,54 @@ export const extraCurriculars = [
     description:
       "Played a key role in organizing and managing hospitality operations during the college fest, ensuring a seamless and positive experience for participants and guests.",
   },
+  {
+    icon: "🏏",
+    title: "Organizer — Farewell Cup 2026",
+    description:
+      "Planned and successfully coordinated a hostel-level cricket tournament consisting of 8 teams, managing logistics, scheduling, and team participation to ensure smooth execution.",
+  },
 ];
 
 export const certifications = [
   {
     id: 1,
+    title: "Complete web development course",
+    issuer: "Hitesh Choudhary",
+    platform: "Udemy",
+    date: "July 5, 2026",
+    credentialLink: "https://ude.my/UC-db1a339a-17c5-41dd-9577-734c15416ccb",
+    icon: "udemy",
+    badgeColor: "#A435F0",
+    note: "Length: 100 total hours. Comprehensive web development training covering frontend and backend development concepts.",
+    credentialNo: "UC-db1a339a-17c5-41dd-9577-734c15416ccb",
+  },
+  {
+    id: 2,
     title: "AWS Cloud Technical Essentials",
     issuer: "AWS Cloud",
     platform: "Coursera",
     date: "April 02, 2026",
     credentialLink:
       "https://www.coursera.org/account/accomplishments/verify/LBCJ3JHD3XYP",
-    icon: "aws-cloud",
-    badgeColor: "#4285F4",
-    note: null,
+    icon: "google-cloud",
+    badgeColor: "#FFB6C1 ",
+    note: "Skills: AWS core services (EC2, S3), Cloud computing fundamentals, Basic cloud architecture",
     credentialNo: null,
   },
   {
-    id: 2,
+    id: 3,
     title: "Google Cloud Fundamentals: Core Infrastructure",
     issuer: "Google Cloud",
     platform: "Coursera",
     date: "November 27, 2025",
     credentialLink: "https://coursera.org/verify/1F2C320VW7RH",
     icon: "google-cloud",
-    badgeColor: "#4285F4",
-    note: null,
+    badgeColor: "#3265F2",
+    note: "Skills: GCP core services (Compute Engine, Cloud Storage), IAM & networking basics, Resource management",
     credentialNo: null,
   },
   {
-    id: 3,
+    id: 4,
     title: "Developing Applications with Google Cloud: Foundations",
     issuer: "Google Cloud",
     platform: "Coursera",
@@ -260,11 +279,11 @@ export const certifications = [
     credentialLink: "https://coursera.org/verify/1GOAN4MJ4AUK",
     icon: "google-cloud",
     badgeColor: "#34A853",
-    note: null,
+    note: "Skills: App deployment on GCP, Cloud APIs integration, Scalable application design",
     credentialNo: null,
   },
   {
-    id: 4,
+    id: 5,
     title: "FLY-Scholar — Finding the Leader in You",
     issuer: "Competitiveness Mindset Institute, USA",
     platform: "CMI — Foundation for Excellence",
@@ -277,7 +296,7 @@ export const certifications = [
     note: "Skills: Conscientiousness, Innovativeness, Taking Initiative, Perseverance & Problem Solving",
   },
   {
-    id: 5,
+    id: 6,
     title: "Web Development Internship",
     issuer: "Elevate Labs",
     platform: "Skill India / Ministry of MSME, Govt. of India",

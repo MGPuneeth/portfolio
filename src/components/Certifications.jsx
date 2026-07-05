@@ -171,7 +171,7 @@ export default function Certifications() {
                       fontStyle: "italic",
                       marginBottom: "10px",
                       lineHeight: 1.5,
-                      borderLeft: `2px solid ${cert.badgeColor}60`,
+                      borderLeft: `2px solid ${cert.badgeColor}70`,
                       paddingLeft: "8px",
                     }}
                   >
